@@ -16,11 +16,10 @@ Including another URLconf
 """
 # myapp/urls.py (URL configuration for your app)
 
-from django.urls import path
-from . import views
+from django.contrib import admin
+from django.urls import include, path
 
 urlpatterns = [
-    path('all_data/', views.display_all_data, name='display_all_data'),
-    # Add other URL patterns for your app here
+    path('admin/', admin.site.urls),
+    path('myapp/', include('myapp.urls')),
 ]
-
