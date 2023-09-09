@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from django.urls import include, path
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -83,4 +84,11 @@ urlpatterns = [
     # ... other URL patterns ...
 
     path('myapp/', include('ASECode.myapp.urls')),
+]
+
+
+urlpatterns = [
+    # ... other URL patterns ...
+
+    path('myapp/', include('myapp.urls')),
 ]
