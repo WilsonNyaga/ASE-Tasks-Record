@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -59,4 +60,11 @@ urlpatterns = [
     path('contact/', views.contact_view, name='contact'),
 ]
 
-from django.urls import include
+
+
+urlpatterns = [
+    # ... other URL patterns ...
+
+    path('myapp/', include('myapp.urls', namespace='myapp')),
+    # Replace 'myapp/' with your desired URL prefix
+]
