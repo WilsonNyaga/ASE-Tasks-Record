@@ -19,5 +19,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('list/', views.task_list, name='task_list'),
+    path('add_aircraft/', views.add_aircraft, name='add_aircraft'),  # URL for adding aircraft
+    path('edit_aircraft/<int:aircraft_id>/', views.edit_aircraft, name='edit_aircraft'),  # URL for editing aircraft
+    path('all_data/', views.display_all_data, name='aircraft_list'),  # URL for displaying all aircraft data
+    path('contact/', views.contact_view, name='contact'),  # URL for displaying the contact form
 ]
