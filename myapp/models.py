@@ -1,7 +1,6 @@
-from django.db import models
-
 # Create your models here.
 from django.db import models
+from django.utils import timezone
 
 class Aircraft(models.Model):
     registration = models.CharField(max_length=10)
