@@ -61,10 +61,10 @@ urlpatterns = [
 ]
 
 
-
 urlpatterns = [
     # ... other URL patterns ...
 
-    path('myapp/', include('myapp.urls', namespace='myapp')),
-    # Replace 'myapp/' with your desired URL prefix
+    path('ASECode/', include('ASECode.urls')),
+    # Replace 'ASECode/' with your desired URL prefix
 ]
+
