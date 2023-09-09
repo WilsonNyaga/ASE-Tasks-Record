@@ -45,7 +45,12 @@ def contact_view(request):
         if form.is_valid():
             # Process the form data, e.g., send an email
             # Redirect or display a success message
+            pass  # Add your code here for processing the form data
     else:
         form = ContactForm()
 
     return render(request, 'myapp/contact.html', {'form': form})
+    
+# views.py in your app directory
+from django.shortcuts import render
+from .forms import ContactForm
