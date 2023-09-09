@@ -37,6 +37,7 @@ def display_all_data(request):
 
 # views.py in your app directory
 from django.shortcuts import render
+from django.core.mail import send_mail  # Import the send_mail function
 from .forms import ContactForm
 
 def contact_view(request):
@@ -44,13 +45,22 @@ def contact_view(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             # Process the form data, e.g., send an email
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+            sender = form.cleaned_data['sender']
+            cc_myself = form.cleaned_data['cc_myself']
+
+            recipients = ['wilsonnyaga2@gmail.com']  # Replace with your Gmail address
+
+            if cc_myself:
+                recipients.append(sender)
+
+            send_mail(subject, message, sender, recipients)
+
             # Redirect or display a success message
-            pass  # Add your code here for processing the form data
+            # For example, you can redirect to a thank you page
+            return redirect('thank_you')  # Change 'thank_you' to the appropriate URL pattern name
     else:
         form = ContactForm()
 
     return render(request, 'myapp/contact.html', {'form': form})
-    
-# views.py in your app directory
-from django.shortcuts import render
-from .forms import ContactForm
