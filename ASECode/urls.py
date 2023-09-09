@@ -77,3 +77,10 @@ urlpatterns = [
     # Replace 'myapp/' with your desired URL prefix
 ]
 
+from django.urls import include, path
+
+urlpatterns = [
+    # ... other URL patterns ...
+
+    path('myapp/', include('ASECode.myapp.urls')),
+]
