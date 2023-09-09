@@ -9,9 +9,9 @@ class ContactForm(forms.Form):
 
 # myapp/forms.py
 from django import forms
-from .models import Aircraft  # Import the Aircraft model from models.py
+from .models import Aircraft
 
 class AircraftForm(forms.ModelForm):
     class Meta:
-        model = Aircraft  # Specify the model for the form
-        fields = ['registration', 'client', 'job_number', 'date']  # Define the fields you want in the form
+        model = Aircraft
+        fields = ['job_number', 'registration', 'client', 'unit_description_name', 'unit_description_part_number', 'unit_description_serial_number', 'reported_snag', 'work_done']  # Define the fields you want in the form
