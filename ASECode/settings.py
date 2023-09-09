@@ -76,6 +76,16 @@ WSGI_APPLICATION = 'ASECode.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ASE Tasks Record',    # Replace with your MySQL database name
+        'USER': 'ASE',                 # Replace with your MySQL username
+        'PASSWORD': 'ASE3055!Eng.',    # Replace with your MySQL password
+        'HOST': 'localhost',           # Use 'localhost' if MySQL is on the same server
+        'PORT': '',                    # Leave this empty to use the default MySQL port (3306)
+    }
+}
+DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
