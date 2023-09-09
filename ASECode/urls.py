@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -66,5 +67,13 @@ urlpatterns = [
 
     path('ASECode/', include('ASECode.urls')),
     # Replace 'ASECode/' with your desired URL prefix
+]
+
+
+urlpatterns = [
+    # ... other URL patterns ...
+
+    path('myapp/', include('myapp.urls')),
+    # Replace 'myapp/' with your desired URL prefix
 ]
 
