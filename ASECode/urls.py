@@ -58,3 +58,5 @@ urlpatterns = [
     # Other URL patterns...
     path('contact/', views.contact_view, name='contact'),
 ]
+
+from django.urls import include
