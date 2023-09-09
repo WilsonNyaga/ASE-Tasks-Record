@@ -1,0 +1,38 @@
+<!-- templates/myapp/all_data.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Data Records</title>
+</head>
+<body>
+    <h1>All Data Records</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Registration</th>
+                <th>Client</th>
+                <th>Reported Snag</th>
+                <th>Work Done</th>
+                <th>Date</th>
+                <th>Job Number</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for aircraft in aircraft %}
+                <tr>
+                    <td>{{ aircraft.registration }}</td>
+                    <td>{{ aircraft.client }}</td>
+                    <td>{{ aircraft.reported_snag }}</td>
+                    <td>{{ aircraft.work_done }}</td>
+                    <td>{{ aircraft.date }}</td>
+                    <td>{{ aircraft.job_number }}</td>
+                    <!-- Add more columns as needed -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
