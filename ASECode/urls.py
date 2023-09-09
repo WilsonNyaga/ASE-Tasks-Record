@@ -14,81 +14,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import include, path
-from django.contrib import admin
-from django.urls import path
-from django.urls import include
+# myapp/urls.py (URL configuration for your app)
 
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
-
-# project/urls.py
-from django.contrib import admin
-from django.urls import path, include
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('myapp/', include('myapp.urls')),  # Replace 'myapp' with your app's name
-]
-
-# urls.py in your app directory
 from django.urls import path
 from . import views
 
 urlpatterns = [
-    # Other URL patterns...
     path('all_data/', views.display_all_data, name='display_all_data'),
+    # Add other URL patterns for your app here
 ]
 
-# urls.py in your app directory
-from django.contrib.auth import views as auth_views
-
-urlpatterns = [
-    # Other URL patterns...
-    path('login/', auth_views.LoginView.as_view(), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('register/', auth_views.RegistrationView.as_view(), name='register'),
-    # Add other authentication-related URL patterns
-]
-
-# urls.py in your app directory
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    # Other URL patterns...
-    path('contact/', views.contact_view, name='contact'),
-]
-
-
-urlpatterns = [
-    # ... other URL patterns ...
-
-    path('ASECode/', include('ASECode.urls')),
-    # Replace 'ASECode/' with your desired URL prefix
-]
-
-
-urlpatterns = [
-    # ... other URL patterns ...
-
-    path('myapp/', include('myapp.urls')),
-    # Replace 'myapp/' with your desired URL prefix
-]
-
-from django.urls import include, path
-
-urlpatterns = [
-    # ... other URL patterns ...
-
-    path('myapp/', include('ASECode.myapp.urls')),
-]
-
-
-urlpatterns = [
-    # ... other URL patterns ...
-
-    path('myapp/', include('myapp.urls')),
-]
