@@ -21,15 +21,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r4&m#_-q)(2!5cjfcf8j3q4u$qdcf1kbgn8u*m3for2c(nrctj'
+SECRET_KEY = '99e9dff683727aa0c9e92d45c69d02275007999bd3ae94f5b1286afb2a99bf2e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False # Set to False in production
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['asetasksrecord.kesug.com']
 
 
 # Application definition
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',  # Add your app name here
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -84,7 +86,8 @@ DATABASES = {
         'PORT': '',                    # Leave this empty to use the default MySQL port (3306)
     }
 }
-DATABASES = {
+
+"""'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
@@ -96,7 +99,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+}'''"""
 
 
 # Password validation
@@ -133,7 +136,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
