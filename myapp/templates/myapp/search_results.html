@@ -1,0 +1,31 @@
+<!-- templates/myapp/search_results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    
+    <!-- Display the user's search query -->
+    <p>Your search query: "{{ query }}"</p>
+
+    <!-- Check if there are results to display -->
+    {% if results %}
+        <ul>
+            {% for aircraft in results %}
+                <!-- Display the fields you want from the search results -->
+                <li>
+                    Registration: {{ aircraft.registration }}<br>
+                    Client: {{ aircraft.client }}<br>
+                    Job Number: {{ aircraft.job_number }}<br>
+                    Date: {{ aircraft.date }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+</body>
+</html>
