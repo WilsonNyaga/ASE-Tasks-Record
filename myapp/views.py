@@ -1,4 +1,4 @@
-# views.py in your app directory
+# myapp/views.py
 from django.shortcuts import render, redirect
 from .models import Aircraft
 from .forms import AircraftForm  # Import your form
@@ -64,3 +64,26 @@ def contact_view(request):
         form = ContactForm()
 
     return render(request, 'myapp/contact.html', {'form': form})
+
+# views.py
+from django.db.models import Q
+from .models import Aircraft
+
+def search_aircraft(request):
+    query = request.GET.get('q')  # Get the search query from the URL parameters
+    if query:
+        # Use Q objects to perform a case-insensitive search on specified fields
+        results = Aircraft.objects.filter(
+            Q(job_number__icontains=query) |
+            Q(registration__icontains=query) |
+            Q(client__icontains=query) |
+            Q(unit_description_name__icontains=query) |
+            Q(unit_description_part_number__icontains=query) |
+            Q(unit_description_serial_number__icontains=query) |
+            Q(reported_snag__icontains=query) |
+            Q(work_done__icontains=query)
+        )
+    else:
+        results = []  # Empty result list if no query provided
+
+    return render(request, 'myapp/search_results.html', {'results': results, 'query': query})
