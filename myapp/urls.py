@@ -23,4 +23,5 @@ urlpatterns = [
     path('edit_aircraft/<int:aircraft_id>/', views.edit_aircraft, name='edit_aircraft'),  # URL for editing aircraft
     path('all_data/', views.display_all_data, name='aircraft_list'),  # URL for displaying all aircraft data
     path('contact/', views.contact_view, name='contact'),  # URL for displaying the contact form
+    path('search_aircraft/', views.search_aircraft, name='search_aircraft'),
 ]
