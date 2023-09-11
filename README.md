@@ -1,6 +1,6 @@
 # ASE-Tasks-Record
 
-This Django web application is designed to help the ASE workshop efficiently record and manage tasks.
+This Django web application is designed to help the A.S.E. workshop efficiently record and manage tasks.
 
 It offers task creation, tracking, and more.
 
