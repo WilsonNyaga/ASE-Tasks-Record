@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amager Systems Engineering</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Reset default styles */
+    body, h1, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header styles */
+    .header {
+      background-color: #222; /* Dark background */
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .logo {
+      text-decoration: none;
+      color: #fff;
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    .nav-items {
+      list-style: none;
+      margin-top: 20px;
+      padding: 0;
+    }
+
+    .nav-items li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    .nav-items a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    /* Main styles */
+    .main {
+      text-align: center;
+      padding: 20px;
+      background-color: #333; /* Dark background */
+    }
+
+    .intro {
+      background-color: #444; /* Darker background */
+      padding: 40px;
+      border-radius: 10px;
+    }
+
+    .intro h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #fff; /* White text */
+    }
+
+    .intro p {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #bbb; /* Light gray text */
+    }
+
+    .intro button {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .intro button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Achievements styles */
+    .achievements {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+    .work {
+      flex: 1;
+      margin: 0 10px;
+      padding: 30px;
+      background-color: #444; /* Darker background */
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .work:hover {
+      transform: translateY(-5px);
+    }
+
+    .work i {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #007BFF;
+    }
+
+    .work-heading {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #fff; /* White text */
+    }
+
+    .work-text {
+      font-size: 18px;
+      color: #bbb; /* Light gray text */
+    }
+
+    /* Footer styles */
+    .footer {
+      background-color: #222; /* Dark background */
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .copy {
+      font-size: 18px;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .links {
+      margin: 0 10px;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 24px;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    .links a:hover {
+      color: #007BFF;
+    }
+
+    .fab {
+      font-size: 30px;
+    }
+
+    /* Responsive design with media queries */
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 30px;
+      }
+
+      .nav-items li {
+        margin-right: 10px;
+      }
+
+      .nav-items a {
+        font-size: 16px;
+      }
+
+      .intro h1 {
+        font-size: 28px;
+      }
+
+      .intro p {
+        font-size: 18px;
+      }
+
+      .intro button {
+        padding: 10px 20px;
+        font-size: 18px;
+      }
+
+      .achievements {
+        flex-direction: column;
+      }
+
+      .work {
+        margin: 0 0 20px 0;
+      }
+
+      .work-heading {
+        font-size: 22px;
+      }
+
+      .work-text {
+        font-size: 16px;
+      }
+
+      .copy {
+        font-size: 16px;
+      }
+
+      .links a {
+        font-size: 20px;
+      }
+
+      .fab {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <a href="#" class="logo">Amager Systems Engineering</a>
+    <nav>
+      <ul class="nav-items">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="{% url 'login' %}" class="btn btn-primary">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="intro">
+      <h1>Welcome to Amager Systems Engineering Limited</h1>
+      <p>Join the Future of Engineering.</p>
+      <button>Learn More</button>
+    </div>
+    <div class="achievements">
+      <div class="work">
+        <i class="fas fa-atom"></i>
+        <p class="work-heading">Your Trusted Partner</p>
+        <p class="work-text">We've built a reputation as a trusted partner in aviation and engineering, thanks to our transparency, integrity, and reliability.</p>
+      </div>
+      <div class="work">
+        <i class="fas fa-skiing"></i>
+        <p class="work-heading">Our Expertise</p>
+        <p class="work-text">Our dedicated team of engineers brings decades of collective experience to the table, ensuring excellence in avionics, mechanical, and electrical engineering.</p>
+      </div>
+      <div class="work">
+        <i class="fas fa-ethernet"></i>
+        <p class="work-heading">Join the Future of Engineering</p>
+        <p class="work-text">Partner with Amager Systems Engineering Limited for cutting-edge engineering solutions that redefine what's possible. Contact us today and discover excellence in engineering.</p>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="copy">© 2023 Amager Systems Engineering</div>
+    <div class="bottom-links">
+      <div class="links">
+        <span>Follow Us</span>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

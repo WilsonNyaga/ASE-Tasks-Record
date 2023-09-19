@@ -1,0 +1,75 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Profile | A.S.E.{% endblock %}
+
+{% block content %}
+<style>
+    /* Add general styles for buttons */
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Style navigation bar buttons for light mode */
+    .navbar {
+        background-color: #007BFF; /* Blue background color */
+        padding: 10px;
+    }
+
+    .navbar a {
+        color: #fff; /* White text color */
+        margin: 0 10px;
+        text-decoration: none;
+    }
+
+    /* Define dark mode styles */
+    .dark-mode .navbar {
+        background-color: #333; /* Dark background color for dark mode */
+    }
+
+    .dark-mode .navbar a {
+        color: #fff; /* White text color for dark mode */
+    }
+
+    /* Profile picture styles */
+    .profile-picture {
+        width: 150px; /* Adjust the size as needed */
+        height: 150px; /* Adjust the size as needed */
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    /* Container for profile picture and user information */
+    .profile-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* Add more styles for specific buttons as needed */
+</style>
+
+<div class="container profile-container">
+    <div>
+    </div>
+    <h1>Your Profile</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Username: {{ user.username }}</h5>
+            <p class="card-text">Email: {{ user.email }}</p>
+            <!-- Add more user profile information here -->
+        </div>
+    </div>
+
+</div>
+<div class="navbar">
+    <a href="{% url 'edit_profile' %}" class="btn">Edit Profile</a>
+    <a href="{% url 'add_task' %}" class="btn">Create Task</a>
+    <a href="{% url 'view_tasks' %}" class="btn">View Task</a>
+    <a href="{% url 'logout' %}" class="btn">Logout</a>
+</div>
+{% endblock %}

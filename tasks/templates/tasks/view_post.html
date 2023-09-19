@@ -1,0 +1,21 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}View Post | A.S.E.{% endblock %}
+
+{% block content %}
+<div class="container view-post-container">
+    <h1>View Blog Post</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Blog Post Title</h5>
+            <p class="card-text">Author: John Doe</p>
+            <p class="card-text">Date Published: September 20, 2023</p>
+            <hr>
+            <div class="blog-content">
+                <!-- Add content of the blog post here -->
+                <p>This is the content of the blog post. You can insert the text, images, and other elements of your blog post here.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

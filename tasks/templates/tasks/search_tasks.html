@@ -1,0 +1,18 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Search Tasks | A.S.E.{% endblock %}
+
+{% block content %}
+<div class="container search-tasks-container">
+    <h1>Search Tasks</h1>
+    <form method="get" action="{% url 'search_tasks' %}">
+        <div class="form-group">
+            <input type="text" class="form-control" id="search" name="q" placeholder="Search tasks...">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <div class="search-results">
+        <!-- Display search results here -->
+    </div>
+</div>
+{% endblock %}

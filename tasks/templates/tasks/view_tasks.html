@@ -1,0 +1,38 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}View Tasks | A.S.E.{% endblock %}
+
+{% block content %}
+<div class="container view-tasks-container">
+    <h1>Your Tasks</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Job Number</th>
+                <th>Aircraft Registration</th>
+                <th>Client</th>
+                <th>Unit Description</th>
+                <th>Unit Part Number</th>
+                <th>Unit Serial Number</th>
+                <th>Reported Snag</th>
+                <th>Work Done</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2023-09-25</td>
+                <td>001</td>
+                <td>ABC123</td>
+                <td>Client A</td>
+                <td>Unit A</td>
+                <td>12345</td>
+                <td>67890</td>
+                <td>Reported Snag A</td>
+                <td>Work Done A</td>
+            </tr>
+            <!-- Add more task data rows here -->
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Profile | A.S.E.{% endblock %}
+
+{% block content %}
+<div class="container profile-container">
+    <h1>Your Profile</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Username: {{ user.username }}</h5>
+            <p class="card-text">Email: {{ user.email }}</p>
+            <!-- Add more user profile information here -->
+        </div>
+    </div>
+</div>
+{% endblock %}

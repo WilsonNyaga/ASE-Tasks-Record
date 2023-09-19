@@ -1,0 +1,25 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Register | A.S.E.{% endblock %}
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Include the CSS file -->
+<div class="register-container">
+    <h1>Register for A.S.E.</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="password1">Password</label>
+            <input type="password" id="password1" name="password1" class="form-control" required>
+        </div>
+        <!-- Rest of your form -->
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Log in here</a>.</p>
+</div>
+{% endblock %}

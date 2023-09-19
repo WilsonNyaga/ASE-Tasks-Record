@@ -1,0 +1,69 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Edit Task | A.S.E.{% endblock %}
+
+{% block content %}
+<div class="container edit-task-container">
+    <h1>Edit Task</h1>
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="aircraft_registration">Aircraft Registration</label>
+            <input type="text" class="form-control" id="aircraft_registration" name="aircraft_registration" value="ABC123" required>
+            <div class="invalid-feedback">
+                Please provide the aircraft registration.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="client">Client</label>
+            <input type="text" class="form-control" id="client" name="client" value="Client Name" required>
+            <div class="invalid-feedback">
+                Please provide the client name.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="unit_description">Unit Description</label>
+            <input type="text" class="form-control" id="unit_description" name="unit_description" value="Unit Description" required>
+            <div class="invalid-feedback">
+                Please provide the unit description.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="unit_part_number">Unit Part Number</label>
+            <input type="text" class="form-control" id="unit_part_number" name="unit_part_number" value="12345" required>
+            <div class="invalid-feedback">
+                Please provide the unit part number.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="unit_serial_number">Unit Serial Number</label>
+            <input type="text" class="form-control" id="unit_serial_number" name="unit_serial_number" value="67890" required>
+            <div class="invalid-feedback">
+                Please provide the unit serial number.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="reported_snag">Reported Snag</label>
+            <textarea class="form-control" id="reported_snag" name="reported_snag" required>Reported Snag Text</textarea>
+            <div class="invalid-feedback">
+                Please provide the reported snag.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="work_done">Work Done</label>
+            <textarea class="form-control" id="work_done" name="work_done" required>Work Done Text</textarea>
+            <div class="invalid-feedback">
+                Please provide details of the work done.
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Edit Profile | A.S.E.{% endblock %}
+
+{% block content %}
+<div class="container edit-profile-container">
+    <h1>Edit Your Profile</h1>
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" value="YourUsername" required>
+            <div class="invalid-feedback">Please provide a username.</div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="your.email@example.com" required>
+            <div class="invalid-feedback">Please provide a valid email.</div>
+        </div>
+        <!-- Other form fields here -->
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Delete Task | A.S.E.{% endblock %}
+
+{% block content %}
+<div class="container delete-task-container">
+    <h1>Delete Task</h1>
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+        <p>Are you sure you want to delete this task?</p>
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>
+{% endblock %}
